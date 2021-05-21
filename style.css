@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+body{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+#glowBtn1{
+    --color-neon: hsl(177, 100%, 63%);
+}
+#glowBtn2{
+    --color-neon: rgb(255, 32, 181);
+}
+#glowBtn3{
+    --color-neon: rgb(41, 255, 51);
+}
+#glowBtn4{
+    --color-neon: rgb(255, 240, 32);
+}
+
+
+
+.glowBtn{
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 0;
+    width: 24%;
+    height: 30vh;
+    font-family: 'Train One', cursive;
+    font-size: 6rem;
+    color: var(--color-neon);
+    border: var(--color-neon) 1rem solid ;
+    box-shadow: 0 0 0.1rem inset white,
+                0 0 1rem inset,
+                0 0 0.1rem  white,
+                0 0 1rem  ;
+    border-radius: 1rem;
+    background-color: transparent;
+    z-index: 1;
+    text-shadow: 0 0 0.1rem white, 0 0 1rem  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.glowBtn:before{
+    pointer-events: none;
+    content: 'Neon';
+    align-content: center;
+    vertical-align: middle;
+    position: absolute;
+    width: 105%;
+    height: 100%;
+    background: transparent;
+    margin: 0;
+    transform:  perspective(25rem) rotateX(70deg) rotateX(180deg) translateY(-5rem) scale(0.75, 0.6);
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    z-index: 0;
+    border-radius: 1rem;
+    border: var(--color-neon) 1rem solid ;
+    box-shadow: 0 0 0.2rem inset white,
+    0 0 1rem inset,
+    0 0 0.2rem  white,
+    0 0 1rem  ;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.glowBtn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-neon);
+    z-index: -1;
+    opacity: 0;
+}
+
+button span{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+}
+.glowBtn:hover {
+    opacity: 1;
+    text-shadow: inset 0em 0em 0.1em white;
+    color: white;
+    box-shadow: 0 0 5rem var(--color-neon) ;
+    z-index: 0;
+
+}
+.glowBtn:hover:before {
+    opacity: 0.7;
+    filter: blur(10px);
+    background:var(--color-neon);
+    transform:  perspective(25rem) rotateX(70deg) rotateX(180deg) translateY(-7rem) scale(0.77, 0.66);
+    border-color: var(--color-neon);
+    border: none;
+    box-shadow: 0 0 0.2rem inset var(--color-neon),
+    0 0 1rem inset var(--color-neon) ,
+    0 0 0.2rem  var(--color-neon),
+    0 0 1rem var(--color-neon) ;}
+.glowBtn:hover::after {
+    opacity: 1;
+}
